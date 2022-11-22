@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - pip install awscli
+  build:
+    on-failure: ABORT
+    commands:
+      - aws s3api create-bucket --bucket romulo-amaral-codepipeline-test2 --region eu-west-1
