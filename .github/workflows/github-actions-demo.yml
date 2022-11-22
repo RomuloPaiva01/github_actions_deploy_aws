@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Create bucket in S3
-      uses: aitorres/aws-s3-create-bucket@v1.2.0
+      - uses: aitorres/aws-s3-create-bucket@v1.2.0
       with:
          bucket-name: 'romulo-amaral-github-actions-test1'
          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
