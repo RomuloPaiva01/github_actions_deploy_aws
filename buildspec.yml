@@ -4,8 +4,8 @@ phases:
     runtime-versions:
       python: 3.9
     commands:
-      - pip install awscli
+      - pip install boto3
   build:
     on-failure: ABORT
     commands:
-      - aws s3api create-bucket --bucket romulo-amaral-codepipeline-test2 --region eu-west-1
+      - python create_s3.py
