@@ -14,9 +14,9 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Create bucket in S3
-      - uses: aitorres/aws-s3-create-bucket@v1.2.0
-      with:
-         bucket-name: 'romulo-amaral-github-actions-test1'
-         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-         aws-region: 'eu-west-1'
+        uses: aitorres/aws-s3-create-bucket@v1.2.0
+        with:
+           bucket-name: 'romulo-amaral-github-actions-test1'
+           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+           aws-region: 'eu-west-1'
