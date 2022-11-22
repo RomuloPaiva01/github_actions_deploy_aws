@@ -1,22 +1,21 @@
-name: GitHub Actions Demo model deploy test
+name: GitHub Actions Demo create s3
 
 on:
    push:
-      branches: [ master ]
+      branches: [ main ]
    pull_request:
-      branches: [ master ]
+      branches: [ main ]
 
 jobs:
    build:
       runs-on: ubuntu-latest
 
-      steps:
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1 # More information on this action can be found below in the 'AWS Credentials' section
-        with:
-          role-to-assume: arn:aws:iam::276848361358:role/sagemaker-role-demo
-          aws-region: eu-west-1
-
-      - name: Check if login
-        run: aws sts get-caller-identity
+   steps:
+         - uses: actions/checkout@master
+   - name: Upload to S3
+         run: |
+            aws s3 mb s3://romulo-amaral-github-actions
+         env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            AWS_DEFAULT_REGION: 'eu-west-1'
