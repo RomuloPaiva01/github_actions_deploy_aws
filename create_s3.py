@@ -6,7 +6,7 @@ import os
 s3_client = boto3.client('s3',
                             aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
                             aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"],
-                            region_name="eu-west-01")
+                            region_name="eu-west-1")
 
 _ = s3_client.create_bucket(Bucket="romulo-amaral-bucket-codepipeline",
-                            CreateBucketConfiguration={'LocationConstraint': "eu-west-01"})
+                            CreateBucketConfiguration={'LocationConstraint': "eu-west-1"})
