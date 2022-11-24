@@ -1,2 +1,2 @@
-# github_actions_deploy_aws
-Deploy on aws using github actions
+
+Creating s3 on aws using both github actions and codepipeline
